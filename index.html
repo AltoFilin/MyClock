@@ -1,0 +1,26 @@
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Library Test</title>
+</head>
+<script type="text/javascript" src="JS/suncalc.js"></script>
+
+<body>
+ <H2> <p id="IDSunPos">Восход солнца</p> </H2>
+ <H2> <p id="IDMoonPos">Луна</p> </H2>
+
+<script type="text/javascript">
+  var date = new Date()
+  var times = SunCalc.getTimes(new Date(), 55.4330, 37.552);
+  var sunriseStr = times.sunrise.getHours() + ':' + times.sunrise.getMinutes();
+  document.getElementById("IDSunPos").innerHTML = sunriseStr;
+
+  var MoonIll = SunCalc.getMoonIllumination(date)
+
+  document.getElementById("IDMoonPos").innerHTML = MoonIll.phase;
+
+</script>
+
+
+</body>
+</html>
